@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Belajar if dan else if</title>
+ </head>
+ <body>
+     <h2>PENGECEKAN INDEX SISWA</h2>
+     <form onsubmit="return false">
+         <label for="text">Masukan Nama</label>
+         <input type="text" id="nama">
+         <label for="number"><br>Nilai</label>
+         <input type="number" id="nilai"><br>
+         <button onclick="cek_nilai()">Cek Nilai</button>
+       </form>
+       <div id="hasil"></div>
+       <script>
+         function cek_nilai() {
+             
+ let nilai = document.getElementById('nilai').value
+ let nama = document.getElementById('nama').value
+ 
+ if (nilai > 90){
+     document.getElementById('hasil').innerHTML = "selamat "+nama + " mendapatkan index A"
+ }
+ else if (nilai > 80){
+     document.getElementById('hasil').innerHTML = "selamat " + nama+  " mendapatkan index B"
+ }
+ else if (nilai > 70){
+     Document.getElementById('hasil').innerHTML = "selamat "+ nama+ " mendapatkan index c"
+ }
+ else if (nilai > 60){
+     document.getElementById('hasil').innerHTML = "selamat "+nama+ " mendapatkan index d"
+ }
+ else {
+     document.getElementById('hasil').innerHTML = "selamat "+nama+" mendapatkan index e"
+ }
+ 
+ 
+         }
+       </script>
+ </body>
+ </html>

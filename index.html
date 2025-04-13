@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Tugas SALSA</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        h1 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .task-list {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .task-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .task-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        
+        .task-item a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            flex-grow: 1;
+        }
+        
+        .task-item a:hover {
+            color: var(--primary);
+        }
+        
+        .task-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .task-item {
+                padding: 12px 15px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .task-number {
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daftar Tugas SALSA CANTIKA INDRIANI</h1>
+            <p>15 Tugas JAVA SCRIPT TERSTRUKTUR</p>
+        </header>
+        
+        <div class="task-list" id="taskList">
+        </div>
+        
+        <footer>
+            <p>&copy; 4/13/2025 Dibuat oleh FRAZA</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tasks = [
+                { name: "Tugas 1", link: "tugas/tugas1.html" },
+                { name: "Tugas 2", link: "tugas/tugas2.html" },
+                { name: "Tugas 3", link: "tugas/tugas3.html" },
+                { name: "Tugas 4", link: "tugas/tugas4.html" },
+                { name: "Tugas 5", link: "tugas/tugas5.html" },
+                { name: "Tugas 6", link: "tugas/tugas6.html" },
+                { name: "Tugas 7", link: "tugas/tugas7.html" },
+                { name: "Tugas 8", link: "tugas/tugas8.html" },
+                { name: "Tugas 9", link: "tugas/tugas9.html" },
+                { name: "Tugas 10", link: "tugas/tugas10.html" },
+                { name: "Tugas 11", link: "tugas/tugas11.html" },
+                { name: "Tugas 12", link: "tugas/tugas12.html" },
+                { name: "Tugas 13", link: "tugas/tugas13.html" },
+                { name: "Tugas 14", link: "tugas/tugas14.html" },
+                { name: "Tugas 15", link: "tugas/tugas15.html" }
+            ];
+
+            const taskList = document.getElementById('taskList');
+            
+            tasks.forEach((task, index) => {
+                const taskItem = document.createElement('div');
+                taskItem.className = 'task-item';
+                taskItem.innerHTML = `
+                    <span class="task-number">${index + 1}</span>
+                    <a href="${task.link}">${task.name}</a>
+                `;
+                taskList.appendChild(taskItem);
+            });
+        });
+    </script>
+</body>
+</html>

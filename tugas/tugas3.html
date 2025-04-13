@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> mencari luas dan keliling persegi</title>
+     <h2>MENCARI LUAS DAN KELILING PERSEGI </h2>
+ </head>
+ <body>
+     <form onsubmit="return false">
+ <label for="">panjang sisi</label>
+ <input type="number" id="sisi">
+ <button onclick="hitungpersegi()">hitung</button>
+     </form>
+ <div id="hasil"></div>
+ <script>
+     function hitungpersegi() {
+     let sisi = document.getElementById('sisi').value
+ let luas = sisi * sisi
+ let keliling = 4 * sisi
+ document.getElementById('hasil').innerHTML = "luas persegi = " + luas+"<br>keliling = "+keliling;
+ }
+    </script>
